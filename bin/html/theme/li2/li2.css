@@ -1,0 +1,375 @@
+/*li2*/
+
+body
+{
+    background-image: url("images/bg_study.png");
+    font-family: 微软雅黑, Arial, sans-serif;
+    margin:0 auto;
+    max-width: 960px;   
+    font-size: 14px;     
+}
+
+#header 
+{
+    height:49px;
+    max-width: 960px; 
+    background-image: url("images/bg_tipbar.png");   
+}
+
+#center
+{
+    top: 50px;
+    bottom: 33px;
+    position: absolute;
+    width:100%;
+    max-width: 960px;  
+}
+
+#footer 
+{
+    bottom: 0px;
+    height:32px;
+    position: absolute;
+    width:100%;
+    max-width: 960px;
+}
+
+
+#top
+{
+    top: 0px;
+    height:32px;
+    width:100%;
+    line-height:32px;
+    position: absolute;
+}
+#mid
+{
+
+    width:100%;
+
+    top: 33px;
+    bottom: 64px;
+    position: absolute;
+}
+#mid1
+{
+    margin:0 6px 0 6px;
+    /*padding:-20px;*/
+     -webkit-border-image:url(images/br_area.png) 20/20px; /* round;*/
+    /*border-width:20px; */
+    height:100%;
+    overflow:auto;  
+}
+#bottom
+{
+    width:100%; 
+    bottom: 0px;
+    height:24px;
+    line-height:24px;
+    /*border:1px solid red;*/
+    position: absolute;
+    
+}
+
+
+/*操作区*/
+#operate
+{
+    
+    margin-left:10px;
+    /*float:right;*/
+    /*border:1px solid red;*/
+}
+/*单词*/
+.word 
+{
+    font-size: 20px;
+    font-weight: bold;
+}
+/*释义*/
+.mean 
+{
+    font-size: 18px;
+    font-weight: bold;
+}
+/*音标*/
+.pron 
+{
+    font-size: 18px;
+    font-family: 'lucida sans unicode', arial, sans-serif;
+    color: #111111;
+    margin-left: 3px;
+}
+
+/*音标图标*/
+img.icon {
+    background-image: url(../../images/icon.png);
+    background-repeat: no-repeat;
+    height: 16px;
+    width: 16px;
+}
+
+.icon25 
+{
+    cursor: pointer;
+    background-position: 0px -384px;
+}
+
+/*助词图片*/
+#wimg
+{
+    margin:5 5 5 5;
+    float:right;
+}
+  
+/*操作提示信息*/
+#otip
+{
+    padding:0px;
+    margin-left:10px;
+    float:left;
+    line-height:47px;
+    font-size: 16px;
+    font-weight: bold;    
+    color: #666; 
+}
+
+#tabdict
+{
+    padding-top:-22px;
+}
+/*语言岛助词信息区*/
+#langisle
+{
+    /*background-image: url("images/bg_study.png");*/
+}
+
+.idtab li 
+{
+    float: right;
+    margin: 0px;
+    padding: 0px;
+}
+
+.idtab ul
+{
+    margin: 0px;
+    padding: 0px;
+}
+
+.idtab ul a.selected 
+{
+    background: snow;
+    color: black;
+    cursor: default;
+}
+
+.idtab ul a 
+{
+    display: block;
+    text-decoration: none !important;
+    margin:1px 1px 1px 0px;
+}
+
+.idtab div 
+{
+    clear: both;
+
+}
+
+
+iframe
+{
+    margin:0px;
+    padding:0px;
+    border:none;
+}
+    
+.aiclass 
+{
+    color: #666;
+    font-style: italic;
+    font-weight: bold;
+}
+
+
+#goback
+{
+    margin-right:10px;
+    float:right;    
+}
+
+#learnoptionbutton
+{
+    float:left;  
+    margin-left:10px; 
+}
+#statsinfo
+{
+    color: #666;
+}
+
+#statsinfo p
+{
+    margin:0 0 0 5px;
+    padding:0px;
+    display: inline;
+}
+
+#statsthis
+{
+    margin-left:6px;
+    float:left;
+
+}
+#statsthis span
+{
+    /*margin-left:1px;*/   
+}
+#bname
+{
+    margin-right:10px;
+    color: #666;    
+    float:right;;
+    line-height:47px;
+}
+
+
+#learnoption
+{
+    width:540px;
+    height:170px;
+}
+
+#learnoption p
+{
+    float:left;
+}
+.megamenu{
+position: absolute;
+display: none;
+left: 0;
+top: 0;
+background: white;
+border:1px solid #dedede;
+border-width: 3px 1px;
+z-index: 100;
+}
+
+#learnoptiontab.idtab li {
+float: left;
+margin: 0px;
+padding: 0px;
+}
+
+#lo_aiinfo
+{
+    margin: 0px;
+    padding: 0px;  
+}
+#learnoptiontab td
+{
+    font-size: 14px;     
+}
+.lo_learnmode_detail
+{
+   margin-left: 22px; 
+}
+.lm_name
+{
+    width:320px;
+}
+
+
+/* CSS Document */      /* BUTTONS */.buttons a, .buttons button{    display:block;    float:left;    margin:0 7px 0 0;    background-color:#f5f5f5;    border:1px solid #dedede;    border-top:1px solid #eee;    border-left:1px solid #eee;
+    line-height:130%;    text-decoration:none;    font-weight:bold;    color:#565656;    cursor:pointer;    padding:5px 10px 6px 7px; /* Links */}.buttons button{    width:auto;    overflow:visible;    padding:4px 10px 3px 7px; /* IE6 */}.buttons button[type]{    padding:5px 10px 5px 7px; /* Firefox */    line-height:17px; /* Safari */}*:first-child+html button[type]{    padding:4px 10px 3px 7px; /* IE7 */}.buttons button img, .buttons a img{    margin:0 3px -3px 0 !important;    padding:0;    border:none;    width:16px;    height:16px;}/* STANDARD */.buttons a:hover{    background-color:#dff4ff;    border:1px solid #c2e1ef;    color:#336699;}.buttons a:active{    background-color:#6299c5;    border:1px solid #6299c5;    color:#fff;}/* POSITIVE */button.positive, .buttons a.positive{    color:#529214;}.buttons a.positive:hover, button.positive:hover{    background-color:#E6EFC2;    border:1px solid #C6D880;    color:#529214;}.buttons a.positive:active{    background-color:#529214;    border:1px solid #529214;    color:#fff;}/* NEGATIVE */.buttons a.negative, button.negative{    color:#d12f19;}.buttons a.negative:hover, button.negative:hover{    background:#fbe3e4;    border:1px solid #fbc2c4;    color:#d12f19;}.buttons a.negative:active{    background-color:#d12f19;    border:1px solid #d12f19;    color:#fff;}/* REGULAR */button.regular, .buttons a.regular{    color:#336699;}.buttons a.regular:hover, button.regular:hover{    background-color:#dff4ff;    border:1px solid #c2e1ef;    color:#336699;}.buttons a.regular:active{    background-color:#6299c5;    border:1px solid #6299c5;    color:#fff;}
+
+
+
+.snese
+{
+    margin-left:4px;
+}
+.snesc
+{
+    margin-left:14px;
+}
+
+#lo_voice p
+{
+    margin:0px;
+    padding:0px;
+}
+#lo_voice input
+{
+    width:50px;
+}
+
+.keyTip
+{
+    color:#224466;
+    font-weight:bold;
+    width:65px;
+}
+
+
+#selwordbox{
+
+	border:1px solid #a2bbdd;
+
+	height:210px;
+
+	width:280px;
+
+	background-color:#fff;
+
+	left:-1000px;
+
+	top:-1000px;
+
+	position:absolute;
+
+	z-index:100;
+	/*vertical-align:text-top;*/
+
+}
+#slbword {font-size: 18px;font-weight: bold;}
+#slbpron {font-size: 18px;font-family: 'lucida sans unicode', arial, sans-serif;color: #111111;}
+
+#ltextarea { vertical-align: top; }
+#selwordbox input[type="text"], textarea {width:230;}
+#selwordbox .top{
+	margin:0;
+	padding:0;
+	color:#556386;
+	font-size:14px;
+	background:url(../../images/s4.gif) repeat-x 0 0;
+	padding:3px 0px 3px 8px;
+	position:relative;
+}
+
+#min_close{
+
+	width:15px;
+
+	height:15px;
+
+	position:absolute;
+
+	right:4px;
+
+	top:2px;
+
+	background:url(../../images/s2.gif) no-repeat center center;
+
+	cursor:pointer;
+
+}
+
+#lastword {line-height:28px;display:inline;}
+#lwword {font-weight: bold;}
+#lwpron {margin:0 3px;font-family: 'lucida sans unicode', arial, sans-serif;color: #111111;}
+
+#skill {display:inline;}
+.lheight img {margin-top:5px;}
