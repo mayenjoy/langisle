@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LIWord0030", "LIWord0030\LIWord0030.vcproj", "{3C44999B-9192-44F1-97D8-94A0296220B2}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LIUpdate", "LIUpdate\LIUpdate.vcproj", "{FF2C1249-AB23-4240-953D-4569BF9B5C53}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "updateInfoGenerate", "UpdateInfoGenerate\updateInfoGenerate.vcproj", "{7123E726-18DB-4B40-B795-CB9B93E4A1EB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3C44999B-9192-44F1-97D8-94A0296220B2}.Debug|Win32.ActiveCfg = Debug|Win32
+		{3C44999B-9192-44F1-97D8-94A0296220B2}.Debug|Win32.Build.0 = Debug|Win32
+		{3C44999B-9192-44F1-97D8-94A0296220B2}.Release|Win32.ActiveCfg = Release|Win32
+		{3C44999B-9192-44F1-97D8-94A0296220B2}.Release|Win32.Build.0 = Release|Win32
+		{FF2C1249-AB23-4240-953D-4569BF9B5C53}.Debug|Win32.ActiveCfg = Debug|Win32
+		{FF2C1249-AB23-4240-953D-4569BF9B5C53}.Debug|Win32.Build.0 = Debug|Win32
+		{FF2C1249-AB23-4240-953D-4569BF9B5C53}.Release|Win32.ActiveCfg = Release|Win32
+		{FF2C1249-AB23-4240-953D-4569BF9B5C53}.Release|Win32.Build.0 = Release|Win32
+		{7123E726-18DB-4B40-B795-CB9B93E4A1EB}.Debug|Win32.ActiveCfg = Debug|Win32
+		{7123E726-18DB-4B40-B795-CB9B93E4A1EB}.Debug|Win32.Build.0 = Debug|Win32
+		{7123E726-18DB-4B40-B795-CB9B93E4A1EB}.Release|Win32.ActiveCfg = Release|Win32
+		{7123E726-18DB-4B40-B795-CB9B93E4A1EB}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		QtVersion = 4.7.4
+	EndGlobalSection
+EndGlobal
