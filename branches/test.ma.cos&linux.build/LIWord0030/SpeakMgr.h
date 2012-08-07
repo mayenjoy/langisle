@@ -11,6 +11,10 @@
    #include "speaker.h"
 #endif
 
+#if defined(Q_WS_MAC)
+    #include "speaker.h"
+#endif
+
 class SpeakMgr : public QObject
 {
 	Q_OBJECT
@@ -39,6 +43,9 @@ public:
 #if defined(Q_WS_X11)
         SpeakLTTS *m_pSpeakWTTS;
 #endif
+#if defined(Q_WS_MAC)
+    SpeakLTTS *m_pSpeakWTTS;
+#endif
 	SpeakYodao *m_pSpeakYoudao;
 	SpeakGoogle *m_pSpeakGoogle;
 	SpeakRealPeople *m_pSpeakRealPeople;
@@ -54,3 +61,4 @@ protected:
 	int m_nTimeCount;
 	int m_nSleep;
 };
+

@@ -10,7 +10,7 @@ SpeakMgr::SpeakMgr(void)
 #if defined(Q_WS_WIN)
         m_pSpeakWTTS = new SpeakWTTS();
 #endif
-#if defined(Q_WS_X11)
+#if defined(Q_WS_X11) || defined(Q_WS_MAC)
         m_pSpeakWTTS = new SpeakLTTS();
 #endif
 	m_pSpeakYoudao = new SpeakYodao;

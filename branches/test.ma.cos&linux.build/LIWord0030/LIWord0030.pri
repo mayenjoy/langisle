@@ -113,8 +113,8 @@ HEADERS += ./AnalyticStatisticsMgr.h \
     ../comm/qtsingleapplication/qtlocalpeer.h \
     ../comm/qtsingleapplication/qtsingleapplication.h \
     ../comm/qtsingleapplication/qtsinglecoreapplication.h \
-    ../comm/QtSpeech/QtSpeech_unx.h \
-    speaker.h
+    ./speaker.h
+
 SOURCES += ./main.cpp \
     ./NetworkProxyMgr.cpp \
     ./stdafx.cpp \
@@ -220,7 +220,7 @@ SOURCES += ./main.cpp \
     ./qchartviewer.cpp \
     ./ExportWordBase.cpp \
     ./ExportWordQA.cpp \
-    ../comm/QtSpeech/QtSpeech_unx.cpp \
     ../comm/qtlockedfile/qtlockedfile_unix.cpp \
-    speaker.cpp
+    ./speaker.cpp
+
 RESOURCES += ./LIWord0030.qrc

@@ -11,8 +11,13 @@ DEFINES += QT_LARGEFILE_SUPPORT QT_NETWORK_LIB QT_DLL
 INCLUDEPATH += ./GeneratedFiles \
     ./GeneratedFiles/Release \
     .
-LIBS += ./../../qt/comm/quazip/quazip/rquazip.a
-
+macx {
+    LIBS += ./../comm/quazip/quazip/libmacquazip.a
+    LIBS += -lz
+}
+!macx {
+    LIBS += ./../comm/quazip/quazip/quazip.a
+}
 PRECOMPILED_HEADER = StdAfx.h
 DEPENDPATH += .
 MOC_DIR += ./GeneratedFiles/release

@@ -16,18 +16,43 @@ INCLUDEPATH += ./ChartDirector \
     ./GeneratedFiles/Release \
     . \
     ./../comm \
-    ./../comm/QtSpeech \
-    "/usr/include/speech_tools" \
+    ./../comm/QtSpeech
+
+macx {
+    LIBS += ./../comm/quazip/quazip/libmacquazip.a
+    LIBS += -lz
+    SOURCES += ../comm/QtSpeech/QtSpeech_mac.cpp
+    LIBS += -framework AppKit
+}
+
+
+LIBS += -L"../comm" \
+    -L"./../comm/ChartDirector/lib" -lchartdir
+
+
+win32 {
+    SOURCES += QtSpeech_win.cpp
+}
+
+unix:!mac {
+    HEADERS += QtSpeech_unx.h
+
+    SOURCES += ../comm/QtSpeech/QtSpeech_unx.cpp \
+                speaker.cpp
+
+    LIBS += -lncurses \
+    -L"speech_tools" -lestools -lestbase -leststring
+
+    # Linux: use asound
+    LIBS += -lasound
+
+    LIBS += "/usr/include/speech_tools" \
     "/usr/include/festival/"
 
-LIBS += ./../../qt/comm/quazip/quazip/rquazip.a
-LIBS += -L"../../qt/comm" \
-    -lncurses \
-    -L"festival" -lFestival \
-    -L"speech_tools" -lestools -lestbase -leststring \
-    -L"./../../qt/comm/ChartDirector/lib" -lchartdir \
-    -lasound \
-    -lncurses
+    LIBS += ./../comm/quazip/quazip/quazip.a
+    # Mac: use system Frameworks
+    #LIBS += -framework CoreAudio -framework AudioUnit -framework AudioToolbox -framework Carbon
+}
 
 PRECOMPILED_HEADER = StdAfx.h
 DEPENDPATH += .
@@ -37,5 +62,3 @@ UI_DIR += ./GeneratedFiles
 RCC_DIR += ./GeneratedFiles
 include(LIWord0030.pri)
 win32:RC_FILE = LIWord0030.rc
-
-
