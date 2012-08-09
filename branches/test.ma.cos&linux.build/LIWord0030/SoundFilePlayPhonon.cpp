@@ -12,7 +12,8 @@ SoundFilePlayPhonon::SoundFilePlayPhonon(QObject *parent)
 	Phonon::createPath(mediaObject, audioOutput);
 	connect(mediaObject, SIGNAL(finished()), this, SIGNAL(finished()));
 	connect(mediaObject, SIGNAL(stateChanged(Phonon::State, Phonon::State)), this, SLOT(stateChanged(Phonon::State, Phonon::State)));
-	source = NULL;
+    connect(this, SIGNAL(toPlay()), mediaObject, SLOT(play()));
+    source = NULL;
 	curState = Phonon::PausedState;
 }
 
@@ -24,14 +25,15 @@ SoundFilePlayPhonon::~SoundFilePlayPhonon()
 }
 bool SoundFilePlayPhonon::play(const QString &filePath)
 {
-//	DBG(qDebug() << "SoundFilePlayPhonon::play" << filePath << GetCurrentThreadId());
+    DBG(qDebug() << "SoundFilePlayPhonon::play" << filePath );
 	stop();
 	
 	source = new Phonon::MediaSource(filePath);
 	
 	mediaObject->clear();
 	mediaObject->setCurrentSource(*source);
-	mediaObject->play();
+    //mediaObject->play();
+    emit toPlay();
 	return true;
 }
 //#include <windows.h>

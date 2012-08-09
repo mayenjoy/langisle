@@ -5,7 +5,7 @@ TEMPLATE = app
 TARGET = LIWord
 DESTDIR = ../bin
 QT += core gui sql network xml phonon webkit qaxserver qaxcontainer
-CONFIG += release
+CONFIG += debug
 #CONFIG+=debug_and_release
 DEFINES += QT_LARGEFILE_SUPPORT QT_XML_LIB QT_SQL_LIB QT_NETWORK_LIB QT_WEBKIT_LIB QT_PHONON_LIB
 
