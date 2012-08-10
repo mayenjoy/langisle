@@ -7,10 +7,10 @@ SpeakMgr::SpeakMgr(void)
 {
         //GlobalVal::s_pSplash->showMessage("正在初始化TTS模块...", Qt::AlignLeft | Qt::AlignBottom, Qt::black);
 	//m_pSpeakWTTS->setVoice("VW Paul");
-#if defined(Q_WS_WIN)
+#if defined(Q_WS_WIN) || defined(Q_WS_MAC)
         m_pSpeakWTTS = new SpeakWTTS();
 #endif
-#if defined(Q_WS_X11) || defined(Q_WS_MAC)
+#if defined(Q_WS_X11)
         m_pSpeakWTTS = new SpeakLTTS();
 #endif
 	m_pSpeakYoudao = new SpeakYodao;

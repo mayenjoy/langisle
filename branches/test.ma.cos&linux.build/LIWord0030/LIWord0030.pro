@@ -21,7 +21,9 @@ INCLUDEPATH += ./ChartDirector \
 macx {
     LIBS += ./../comm/quazip/quazip/libmacquazip.a
     LIBS += -lz
-    SOURCES += ../comm/QtSpeech/QtSpeech_mac.cpp
+    SOURCES += ../comm/QtSpeech/QtSpeech_mac.cpp \
+            SpeakWTTS.cpp
+    HEADERS += SpeakWTTS.h
     LIBS += -framework AppKit
 }
 
@@ -37,8 +39,7 @@ win32 {
 unix:!mac {
     HEADERS += QtSpeech_unx.h
 
-    SOURCES += ../comm/QtSpeech/QtSpeech_unx.cpp \
-                speaker.cpp
+    SOURCES +=
 
     LIBS += -lncurses \
     -L"speech_tools" -lestools -lestbase -leststring

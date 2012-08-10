@@ -2,8 +2,8 @@
 #define LOG_H
 
 
-#define __DBG           // 注释后不编译DBG中的代码
-#define __LOG_CONSOLE   // 注释后不输出日志到控制台
+//#define __DBG           // 注释后不编译DBG中的代码
+//#define __LOG_CONSOLE   // 注释后不输出日志到控制台
 //#define __LOG_FILE      // 注释后不输出日志到文件
 
 #ifdef __DBG
