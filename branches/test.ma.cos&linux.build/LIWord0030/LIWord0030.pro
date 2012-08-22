@@ -21,6 +21,7 @@ INCLUDEPATH += ./ChartDirector \
 macx {
     LIBS += ./../comm/quazip/quazip/libmacquazip.a
     LIBS += -lz
+    HEADERS += ../comm/QtSpeech/QtSpeech.h
     SOURCES += ../comm/QtSpeech/QtSpeech_mac.cpp \
             SpeakWTTS.cpp
     HEADERS += SpeakWTTS.h
@@ -33,22 +34,20 @@ LIBS += -L"../comm" \
 
 
 win32 {
+    HEADERS += ../comm/QtSpeech/QtSpeech.h
     SOURCES += QtSpeech_win.cpp
 }
 
 unix:!mac {
-    HEADERS += QtSpeech_unx.h
-
+    HEADERS += speaker.h
+    SOURCES += speaker.cpp
     SOURCES +=
 
-    LIBS += -lncurses \
-    -L"speech_tools" -lestools -lestbase -leststring
 
     # Linux: use asound
     LIBS += -lasound
 
-    LIBS += "/usr/include/speech_tools" \
-    "/usr/include/festival/"
+
 
     LIBS += ./../comm/quazip/quazip/quazip.a
     # Mac: use system Frameworks

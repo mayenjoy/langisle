@@ -108,7 +108,6 @@ HEADERS += ./AnalyticStatisticsMgr.h \
     ../comm/log.h \
     ../comm/QNoFocusItemDelegate.h \
     ../comm/ZipFile.h \
-    ../comm/QtSpeech/QtSpeech.h \
     ../comm/qtlockedfile/qtlockedfile.h \
     ../comm/qtsingleapplication/qtlocalpeer.h \
     ../comm/qtsingleapplication/qtsingleapplication.h \
