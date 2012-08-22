@@ -62,6 +62,7 @@
 				AdditionalDependencies="qtmain.lib QtCore4.lib QtGui4.lib QtXml4.lib QtSql4.lib QtNetwork4.lib QAxContainer.lib QtWebKit4.lib phonon4.lib  chartdir50.lib rquazip.lib"
 				OutputFile="../bin/liword.exe"
 				AdditionalLibraryDirectories="&quot;$(QTDIR)\lib&quot;;..\comm\quazip\quazip"
+				UACExecutionLevel="2"
 				GenerateDebugInformation="false"
 				SubSystem="2"
 			/>
@@ -135,6 +136,7 @@
 				AdditionalDependencies="qtmaind.lib QtCored4.lib QtGuid4.lib QtXmld4.lib QtSqld4.lib QtNetworkd4.lib QAxContainerd.lib QtWebKitd4.lib phonond4.lib rquazip.lib chartdir50.lib"
 				OutputFile="../bin/liword.exe"
 				AdditionalLibraryDirectories="&quot;..\comm\quazip\quazip&quot;;&quot;$(QTDIR)\lib&quot;"
+				UACExecutionLevel="2"
 				GenerateDebugInformation="true"
 				SubSystem="1"
 			/>
@@ -1986,6 +1988,10 @@
 						Outputs="&quot;.\GeneratedFiles\$(ConfigurationName)\moc_$(InputName).cpp&quot;"
 					/>
 				</FileConfiguration>
+			</File>
+			<File
+				RelativePath=".\resource.h"
+				>
 			</File>
 			<File
 				RelativePath=".\SoundFilePlayBase.h"
@@ -5360,6 +5366,14 @@
 				</Filter>
 			</Filter>
 		</Filter>
+		<File
+			RelativePath=".\liword.exe.manifest"
+			>
+		</File>
+		<File
+			RelativePath=".\LIWord0030.ico"
+			>
+		</File>
 		<File
 			RelativePath=".\LIWord0030.rc"
 			>

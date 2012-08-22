@@ -6,18 +6,17 @@
 #include "BCMgr.h"
 SpeakWTTS::SpeakWTTS() : SpeakBase("SpeakWTTS")
 {
-    m_pSpeech = 0;
-    try {
-        if (m_pSpeech != 0)
-            delete m_pSpeech;
-        m_pSpeech = new QtSpeech();
-        //connect(m_pSpeech, SIGNAL(finished()), this, SIGNAL(finished()));
-    }
-    catch (QtSpeech::InitError ie)
-    {
-        QMessageBox::warning(0, "警告", "合成语音引擎初始化失败.",  QMessageBox::Ok);
-        m_pSpeech = 0;
-    }
+	try {
+		m_pSpeech = new QtSpeech(NULL);
+		connect(m_pSpeech, SIGNAL(finished()), this, SIGNAL(finished()));
+	}
+	catch (QtSpeech::InitError ie)
+	{
+		//QMessageBox::warning(0, "警告", "合成语音引擎TTS初始化失败.",  QMessageBox::Ok);
+		m_pSpeech = NULL;
+	}
+
+
 }
 
 SpeakWTTS::~SpeakWTTS(void)
@@ -29,24 +28,20 @@ bool SpeakWTTS::speak(const QString &text)
 {
 	//DBG(QDateTime start   =   QDateTime::currentDateTime());
 	if (m_pSpeech) m_pSpeech->tell(text);
-	//DBG(qDebug() << "SpeakWTTS::speakʱ" << start.msecsTo(QDateTime::currentDateTime()));
+	//DBG(qDebug() << "SpeakWTTS::speak??" << start.msecsTo(QDateTime::currentDateTime()));
 	return true;
 }
 
 void SpeakWTTS::setVoice(const QString &voiceName)
 {
-    //if (m_pSpeech) m_pSpeech->setVoice(voiceName);
-    reset();
+	if (m_pSpeech) m_pSpeech->setVoice(voiceName);
 }
 
 
 
 void SpeakWTTS::stop()
 {
-#if defined(Q_WS_WIN)
-        if (m_pSpeech) m_pSpeech->stop();
-#endif
-
+	if (m_pSpeech) m_pSpeech->stop();
 }
 
 QStringList SpeakWTTS::getVoiceList()
@@ -67,37 +62,18 @@ QStringList SpeakWTTS::getVoiceList()
 
 void SpeakWTTS::reset()
 {
-
-    LIConfig *cfg = g_pbcmgr->getConfig();
-    QString voiceName = cfg->getSpeakWTTSVoiceName();
-    qDebug() << voiceName;
-    QtSpeech::VoiceName v;
-    if (!voiceName.isEmpty())
-    {
-        foreach(v, QtSpeech::voices())
-        {
-                qDebug() << "id:" << v.id << "name:" << v.name;
-                if (v.name == voiceName)
-                {
-                    break;
-                }
-        }
-
-    }
-    try {
-        if (m_pSpeech != 0)
-            delete m_pSpeech;
-        m_pSpeech = new QtSpeech(v);
-        //connect(m_pSpeech, SIGNAL(finished()), this, SIGNAL(finished()));
-    }
-    catch (QtSpeech::InitError ie)
-    {
-        QMessageBox::warning(0, "警告", "合成语音引擎初始化失败.",  QMessageBox::Ok);
-        m_pSpeech = 0;
-    }
-
-
-    //setVoice(voiceName);
+	LIConfig *cfg = g_pbcmgr->getConfig();
+	QString voiceName = cfg->getSpeakWTTSVoiceName();
+	if (voiceName.isEmpty())
+	{
+		QStringList vl = getVoiceList();
+		if (!vl.isEmpty())
+		{
+			voiceName = vl[0];
+			cfg->setSpeakWTTSVoiceName(voiceName);
+		}
+	}
+	setVoice(voiceName);
 	DBG(qDebug() << "SpeakWTTS::reset" << voiceName);
 }
 
