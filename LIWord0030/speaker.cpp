@@ -65,7 +65,8 @@ void SpeakLTTS::stop()
 QStringList SpeakLTTS::getVoiceList()
 {
     QStringList voiceslist;
-    voiceslist.clear();
+#if defined(Q_WS_X11)
+
     if(QFile::exists("/usr/bin/espeak"))
     {
         voiceslist <<"eSpeak";
@@ -83,6 +84,11 @@ QStringList SpeakLTTS::getVoiceList()
     //    {
     //        voiceslist<<"f1"<<"f2"<<"f3"<<"f4";
     //    }
+#endif
+#if  defined(Q_WS_MAC)
+
+#endif
+
     return voiceslist;
 }
 

@@ -30,7 +30,8 @@ QString Global::uncrypt(QString data)
 
 QString Global::makePathStr(const QString &fileName)
 {
-	QString appPath = QCoreApplication::applicationDirPath();
+    QString appPath = QCoreApplication::applicationDirPath();
+    DBG(qDebug() << appPath << endl << QCoreApplication::applicationFilePath());
 	return QDir::convertSeparators(appPath.append(fileName));
 }
 

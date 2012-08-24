@@ -31,7 +31,7 @@ bool SpeakOnlineBase::speak(const QString &text)
 	}
 	GlobalVal::s_psfpm->stop();
 	QString hash = QString(QCryptographicHash::hash(text.toUtf8(), QCryptographicHash::Md5).toHex());
-	QString strPath = Global::makePathStr(QString(CACHE_PATH "/" + m_name + "/%1/%2/%3").arg(text.at(0).toLower()).arg(hash.mid(0, 2).toLower()).arg(hash));
+    QString strPath = Global::makePathStr(QString(CACHE_PATH "/" + m_name + "/%1/%2/%3.mp3").arg(text.at(0).toLower()).arg(hash.mid(0, 2).toLower()).arg(hash));
 	DBG(qDebug() << "SpeakOnlineBase::speak : 2" << strPath);
 	mutex.lock();
 	curPath = strPath;

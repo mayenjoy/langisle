@@ -17,13 +17,16 @@
 #define VERINFOFILE "/verinfo_linux.xml"
 #endif
 //////////////////////////////////////////////////////////////////////////
-
+#if defined(Q_WS_MAC)
+#define NEWVER_CHECK_URL "http://down.langisle.com/003/verinfo_mac" VER_1 "." VER_2 "." VER_3 ".xml"
+#define VERINFOFILE "/verinfo_mac.xml"
+#endif
 ///////////////////////////////////////////////e///////////////////////////
 // UPDate
 #if defined(Q_WS_WIN)
 #define UPDATE_EXE "LIUpdate.exe"
 #endif
-#if defined(Q_WS_X11)
+#if defined(Q_WS_X11) || defined(Q_WS_MAC)
 #define UPDATE_EXE "LIUpdate"
 #endif
 
@@ -38,7 +41,7 @@
 #if defined(Q_WS_WIN)
 #define EXENAME "liword.exe"
 #endif
-#if defined(Q_WS_X11)
+#if defined(Q_WS_X11) || defined(Q_WS_MAC)
 #define EXENAME "LIWord"
 #endif
 
