@@ -1,6 +1,5 @@
 #include "stdafx.h"
 #include "SpeakWTTS.h"
-#if defined(Q_WS_WIN)
 
 #include "GlobalVal.h"
 #include "LIConfig.h"
@@ -29,20 +28,27 @@ bool SpeakWTTS::speak(const QString &text)
 {
 	//DBG(QDateTime start   =   QDateTime::currentDateTime());
 	if (m_pSpeech) m_pSpeech->tell(text);
-	//DBG(qDebug() << "SpeakWTTS::speakʱ" << start.msecsTo(QDateTime::currentDateTime()));
+	//DBG(qDebug() << "SpeakWTTS::speak??" << start.msecsTo(QDateTime::currentDateTime()));
 	return true;
 }
 
 void SpeakWTTS::setVoice(const QString &voiceName)
 {
+#if defined(Q_WS_WIN)
 	if (m_pSpeech) m_pSpeech->setVoice(voiceName);
+#endif
+#if defined(Q_WS_MAC)
+    reset();
+#endif
 }
 
 
 
 void SpeakWTTS::stop()
 {
-	if (m_pSpeech) m_pSpeech->stop();
+#if defined(Q_WS_WIN)
+        if (m_pSpeech) m_pSpeech->stop();
+#endif
 }
 
 QStringList SpeakWTTS::getVoiceList()
@@ -78,4 +84,4 @@ void SpeakWTTS::reset()
 	DBG(qDebug() << "SpeakWTTS::reset" << voiceName);
 }
 
-#endif
+

@@ -11,7 +11,20 @@ DEFINES += QT_LARGEFILE_SUPPORT QT_NETWORK_LIB QT_DLL
 INCLUDEPATH += ./GeneratedFiles \
     ./GeneratedFiles/Release \
     .
-LIBS += ./../../qt/comm/quazip/quazip/rquazip.a
+macx {
+    LIBS += ./../comm/quazip/quazip/libmacquazip.a
+    LIBS += -lz
+    SOURCES += ../comm/qtlockedfile/qtlockedfile_unix.cpp
+}
+unix:!mac {
+    LIBS += ./../comm/quazip/quazip/quazip.a
+    SOURCES += ../comm/qtlockedfile/qtlockedfile_unix.cpp
+}
+
+win32 {
+    SOURCES += ../comm/qtlockedfile/qtlockedfile_win.cpp
+    LIBS += ./../comm/quazip/quazip/rquazip.lib
+}
 
 PRECOMPILED_HEADER = StdAfx.h
 DEPENDPATH += .

@@ -108,13 +108,11 @@ HEADERS += ./AnalyticStatisticsMgr.h \
     ../comm/log.h \
     ../comm/QNoFocusItemDelegate.h \
     ../comm/ZipFile.h \
-    ../comm/QtSpeech/QtSpeech.h \
     ../comm/qtlockedfile/qtlockedfile.h \
     ../comm/qtsingleapplication/qtlocalpeer.h \
     ../comm/qtsingleapplication/qtsingleapplication.h \
-    ../comm/qtsingleapplication/qtsinglecoreapplication.h \
-    ../comm/QtSpeech/QtSpeech_unx.h \
-    speaker.h
+    ../comm/qtsingleapplication/qtsinglecoreapplication.h
+
 SOURCES += ./main.cpp \
     ./NetworkProxyMgr.cpp \
     ./stdafx.cpp \
@@ -219,8 +217,6 @@ SOURCES += ./main.cpp \
     ./LIWord02xStudyDB.cpp \
     ./qchartviewer.cpp \
     ./ExportWordBase.cpp \
-    ./ExportWordQA.cpp \
-    ../comm/QtSpeech/QtSpeech_unx.cpp \
-    ../comm/qtlockedfile/qtlockedfile_unix.cpp \
-    speaker.cpp
+    ./ExportWordQA.cpp
+
 RESOURCES += ./LIWord0030.qrc

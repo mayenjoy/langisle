@@ -93,7 +93,7 @@ QVariant UserMgr::getUserInfo(const QString &itemName, const QString &userName) 
 		query.next();
 		return query.record().value(itemName);
 	}
-	return NULL;
+    return 0;
 }
 
 bool UserMgr::verifyPsw(const QString &userName,const QString &psw)

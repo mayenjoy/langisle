@@ -44,6 +44,7 @@ QString PageSOVoiceTTS::currentVoiceName()
 
 void PageSOVoiceTTS::currentIndexChanged(const QString & text)
 {
+	g_pbcmgr->getConfig()->setSpeakWTTSVoiceName(comboVoiceList->currentText());
 	GlobalVal::s_pSpeakMgr->setTTSVoice(text);
 }
 
