@@ -48,8 +48,8 @@ QMAKE_POST_LINK = $$(WINDOWSSDKDIR)/bin/x64/mt.exe -manifest $$(TARGET).exe.mani
 }
 
 unix:!mac {
-    HEADERS += speaker.h
-    SOURCES += speaker.cpp
+    HEADERS +=
+    SOURCES +=
     SOURCES += ../comm/qtlockedfile/qtlockedfile_unix.cpp
 
 
