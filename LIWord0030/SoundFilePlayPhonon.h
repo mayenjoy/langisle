@@ -15,6 +15,8 @@ public:
 
 	virtual bool play(const QString &filePath);
 	virtual void stop();
+signals:
+    void toPlay();
 public slots:
 	void stateChanged ( Phonon::State newstate, Phonon::State oldstate );
 private:

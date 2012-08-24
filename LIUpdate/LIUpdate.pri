@@ -28,5 +28,5 @@ SOURCES += ../comm/LIFileDownload.cpp \
     ../comm/qtlockedfile/qtlockedfile.cpp \
     ../comm/qtsingleapplication/qtlocalpeer.cpp \
     ../comm/qtsingleapplication/qtsingleapplication.cpp \
-    ../comm/qtsingleapplication/qtsinglecoreapplication.cpp \
-    ../comm/qtlockedfile/qtlockedfile_unix.cpp
+    ../comm/qtsingleapplication/qtsinglecoreapplication.cpp
+

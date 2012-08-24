@@ -3,7 +3,7 @@
 #include "SpeakGoogle.h"
 #include "SpeakRealPeople.h"
 #include <qglobal.h>
-#if defined(Q_WS_WIN)
+#if defined(Q_WS_WIN) || defined(Q_WS_MAC)
    #include "SpeakWTTS.h"
 #endif
 
@@ -33,12 +33,13 @@ public:
 	void speakTTS(const QString &text);
 	void stopTTS();
 
-#if defined(Q_WS_WIN)
+#if defined(Q_WS_WIN) || defined(Q_WS_MAC)
         SpeakWTTS *m_pSpeakWTTS;
 #endif
 #if defined(Q_WS_X11)
         SpeakLTTS *m_pSpeakWTTS;
 #endif
+
 	SpeakYodao *m_pSpeakYoudao;
 	SpeakGoogle *m_pSpeakGoogle;
 	SpeakRealPeople *m_pSpeakRealPeople;
@@ -54,3 +55,4 @@ protected:
 	int m_nTimeCount;
 	int m_nSleep;
 };
+
