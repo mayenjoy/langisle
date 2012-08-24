@@ -34,14 +34,21 @@ bool SpeakWTTS::speak(const QString &text)
 
 void SpeakWTTS::setVoice(const QString &voiceName)
 {
+#if defined(Q_WS_WIN)
 	if (m_pSpeech) m_pSpeech->setVoice(voiceName);
+#endif
+#if defined(Q_WS_MAC)
+    reset();
+#endif
 }
 
 
 
 void SpeakWTTS::stop()
 {
-	if (m_pSpeech) m_pSpeech->stop();
+#if defined(Q_WS_WIN)
+        if (m_pSpeech) m_pSpeech->stop();
+#endif
 }
 
 QStringList SpeakWTTS::getVoiceList()
