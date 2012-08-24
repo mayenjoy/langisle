@@ -14,10 +14,18 @@ INCLUDEPATH += ./GeneratedFiles \
 macx {
     LIBS += ./../comm/quazip/quazip/libmacquazip.a
     LIBS += -lz
+    SOURCES += ../comm/qtlockedfile/qtlockedfile_unix.cpp
 }
-!macx {
+unix:!mac {
     LIBS += ./../comm/quazip/quazip/quazip.a
+    SOURCES += ../comm/qtlockedfile/qtlockedfile_unix.cpp
 }
+
+win32 {
+    SOURCES += ../comm/qtlockedfile/qtlockedfile_win.cpp
+    LIBS += ./../comm/quazip/quazip/rquazip.lib
+}
+
 PRECOMPILED_HEADER = StdAfx.h
 DEPENDPATH += .
 MOC_DIR += ./GeneratedFiles/release

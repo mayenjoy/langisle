@@ -217,7 +217,6 @@ SOURCES += ./main.cpp \
     ./LIWord02xStudyDB.cpp \
     ./qchartviewer.cpp \
     ./ExportWordBase.cpp \
-    ./ExportWordQA.cpp \
-    ../comm/qtlockedfile/qtlockedfile_unix.cpp
+    ./ExportWordQA.cpp
 
 RESOURCES += ./LIWord0030.qrc
