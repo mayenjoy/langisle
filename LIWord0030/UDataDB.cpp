@@ -358,9 +358,10 @@ void UDataDB::importBookData(const QString &tableName, const QString &bookDBPath
 		gid = query.value(gidNo).toInt();
 		// DBG(qDebug() << bwid << wid << word << mean << gid);
 
-		if (word.isEmpty()) continue;
+		
 		if (wid == 0)
 		{
+			if (word.isEmpty()) continue;
 			QSqlQuery query(*db);
 			query.prepare("select wid from uword where word = ?");
 			query.addBindValue(word);
