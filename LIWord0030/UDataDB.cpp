@@ -387,6 +387,7 @@ void UDataDB::importBookData(const QString &tableName, const QString &bookDBPath
 		}
 		else
 		{
+			if (word.isEmpty()) continue;
 			mid = importToMData(eOWord, wid);
 		}
 
