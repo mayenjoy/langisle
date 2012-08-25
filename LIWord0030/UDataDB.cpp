@@ -269,6 +269,8 @@ void UDataDB::importToUWord()
 		gid = query.value(gidNo).toInt();
 
 		// DBG(qDebug() << bwid << wid << word << mean << gid);
+		
+		if (word.isEmpty()) continue;
 
 		if (wid == 0)
 		{
@@ -356,6 +358,7 @@ void UDataDB::importBookData(const QString &tableName, const QString &bookDBPath
 		gid = query.value(gidNo).toInt();
 		// DBG(qDebug() << bwid << wid << word << mean << gid);
 
+		if (word.isEmpty()) continue;
 		if (wid == 0)
 		{
 			QSqlQuery query(*db);
