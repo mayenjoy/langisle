@@ -387,7 +387,6 @@ void UDataDB::importBookData(const QString &tableName, const QString &bookDBPath
 		}
 		else
 		{
-			if (word.isEmpty()) continue;
 			mid = importToMData(eOWord, wid);
 		}
 
@@ -656,6 +655,13 @@ WordInfo UDataDB::getWordInfoByMid(int mid)
 		}
 		wi["word"] = quword.value(1);
 		wi["pron"] = "";
+		wi["dmean"] = "";
+		wi["mcode"] = "";
+		wi["emean"] = "";
+		wi["thesaurus"] = "";
+		wi["syllable"] = "";
+		wi["suppletion"] = "";
+		wi["sens"] = "";
 	}
 	else // eOWord
 	{
@@ -665,14 +671,15 @@ WordInfo UDataDB::getWordInfoByMid(int mid)
 			DBG(qDebug() << "UDataDB::getWordInfoByMid 4" << "未获取对应wid的单词信息" << wid);
 			return WordInfo();
 		}
-		wi["word"] = qoword.value(1);
-		wi["pron"] = qoword.value(2);
+		wi["word"] = qoword.value(1).toString();
+		wi["pron"] = qoword.value(2).toString();
 		wi["dmean"] = qoword.value(3).toString().replace("\n", "<br />");
-		wi["mcode"] = qoword.value(4);
-		wi["emean"] = qoword.value(5);
-		wi["thesaurus"] = qoword.value(6); // 同义词
-		wi["syllable"] = qoword.value(7);	// 音节
-		wi["suppletion"] = qoword.value(8);	// 词性变化
+		wi["mcode"] = qoword.value(4).toString();
+		wi["emean"] = qoword.value(5).toString();
+		DBG(qDebug() << "UDataDB::getWordInfoByMid 5" << wi["emean"] << wid);
+		wi["thesaurus"] = qoword.value(6).toString(); // 同义词
+		wi["syllable"] = qoword.value(7).toString();	// 音节
+		wi["suppletion"] = qoword.value(8).toString();	// 词性变化
 		wi["sens"] = getSens(wid);	// 例句
 
 	}
