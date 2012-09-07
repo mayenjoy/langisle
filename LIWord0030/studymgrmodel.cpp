@@ -281,9 +281,9 @@ int StudyMgrModel::getSelCount()
 void StudyMgrModel::MakeExportWord(ExportWordBase *ewb)
 {
 	QSqlQuery query(*pdb);
-	if (!query.exec("select word, mdata.mean from (select * from studyData.mdata where selstatus = 2 and wtype = 2) as mdata inner join dict.word on mdata.wid = dict.word.wid \
+	if (!query.exec("select mdata.mid, word, mdata.mean from (select * from studyData.mdata where selstatus = 2 and wtype = 2) as mdata inner join dict.word on mdata.wid = dict.word.wid \
 					union \
-					select word, mdata.mean from (select * from studyData.mdata where selstatus = 2 and wtype = 1) as mdata INNER join uword on mdata.wid = uword.wid"))
+					select mdata.mid, word, mdata.mean from (select * from studyData.mdata where selstatus = 2 and wtype = 1) as mdata INNER join uword on mdata.wid = uword.wid order by mdata.mid"))
 	{
 		DBG(qDebug() << "UDataDB::MakeExportWord faild ." << query.lastError());
 		return;
