@@ -27,7 +27,14 @@ SpeakWTTS::~SpeakWTTS(void)
 bool SpeakWTTS::speak(const QString &text)
 {
 	//DBG(QDateTime start   =   QDateTime::currentDateTime());
-	if (m_pSpeech) m_pSpeech->tell(text);
+	try {
+		if (m_pSpeech) m_pSpeech->tell(text);
+	}
+	catch(...)
+	{
+
+	}
+	
 	//DBG(qDebug() << "SpeakWTTS::speak??" << start.msecsTo(QDateTime::currentDateTime()));
 	return true;
 }
